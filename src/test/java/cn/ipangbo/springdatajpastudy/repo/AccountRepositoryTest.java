@@ -59,7 +59,7 @@ class AccountRepositoryTest {
 
     @Test
     void canFindByUsername() {
-        System.out.println(repository.findAccountByUsername("大壮"));
+        System.out.println(repository.findAccountByUsername("ipangbo"));
         System.out.println(repository.count());
     }
 
@@ -73,4 +73,8 @@ class AccountRepositoryTest {
         System.out.println(repository.existsAccountByUsername("ipangbo"));
     }
 
+    @Test
+    void canFindScore() {
+        repository.findAccountByUsername("ipangbo").getScoreList().forEach(System.out::println);
+    }
 }
