@@ -8,6 +8,7 @@ class SpringDataJpaStudyApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("junit 5");
     }
 
 }
