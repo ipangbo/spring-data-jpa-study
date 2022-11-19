@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Transactional // 懒加载要在事务环境中
@@ -76,5 +76,15 @@ class AccountRepositoryTest {
     @Test
     void canFindScore() {
         repository.findAccountByUsername("ipangbo").getScoreList().forEach(System.out::println);
+    }
+
+    @Test
+    void canUpdatePasswordById() {
+        System.out.println(repository.updatePasswordById(6, "789"));
+    }
+
+    @Test
+    void canUpdatePasswordByUsername() {
+        System.out.println(repository.updatePasswordByUsername("大聪明", "678"));
     }
 }
